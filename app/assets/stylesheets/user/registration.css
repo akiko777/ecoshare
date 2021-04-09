@@ -1,0 +1,95 @@
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(227, 248, 227);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.form-wrap {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.input-default-profile {
+  width: 100%;
+  margin-top: 5px;
+  height: 100px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.info-text {
+  color: #888;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.register-btn {
+  width: 50%;
+  margin: auto;
+}
+
+.register-green-btn {
+  width: 100%;
+  background: yellowgreen;
+  border: 1px solid yellowgreen;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.indispensable {
+  background: orange;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
