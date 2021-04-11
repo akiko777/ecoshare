@@ -1,0 +1,152 @@
+.header {
+  background-color: rgb(204, 235, 159);
+  margin-bottom: 48px;
+  padding: 20px 0;
+
+}
+
+.headline {
+  height: 50px;
+}
+
+
+h1 {
+  display: flex;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__logout {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+}
+
+.nav__btn {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+}
+
+.share-eco-contents {
+  background-color: #FFF;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.share-eco-main {
+  background-color: #FFF;
+  width: 40vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.share-eco-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 共通 */
+.indispensable {
+  background: orange;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+/* /共通 */
+
+/* 投稿画像 */
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2vh 0;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
+
+/* /投稿画像 */
+
+/* タイトル */
+.share-title {
+  padding: 2vh 0;
+}
+
+.title-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+/* /タイトル */
+
+/* 投稿内容 */
+.post-text {
+  padding: 2vh 0;
+}
+
+.eco-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+/* /投稿内容 */
+
+/* 投稿ボタン */
+.post-btn-contents {
+  width: 100%;
+  text-align: center;
+}
+
+.post-btn {
+  background: yellowgreen;
+  border: 1px solid yellowgreen;
+  color: #fff;
+  width: 50%;
+  height: 70px;
+  font-size: 20px;
+  margin-bottom: 4vh;
+}
+
+/* .back-btn { */
+  /* background: #aaa; */
+  /* border: 1px solid #aaa; */
+  /* color: #fff; */
+  /* padding: 15px 35%; */
+  /* text-decoration: none; */
+/* } */
+/* /投稿ボタン */

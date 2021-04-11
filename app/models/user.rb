@@ -16,5 +16,6 @@ class User < ApplicationRecord
      validates :password_confirmation
    end
 
+   has_many :shares, dependent: :destroy
   
 end
