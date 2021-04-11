@@ -1,0 +1,62 @@
+.top-page-header {
+  width: 100vw;
+  height: 130px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title{
+ font-size: 35px;
+ margin-top: 10px;
+ display: flex;
+}
+
+.btn-area {
+  width: 100vw;
+  height: 80px;
+  background-color: rgb(205, 245, 127);
+  display: flex;
+}
+
+.left-area {
+  width: 50%;
+  height: 80px;
+  background-color: rgb(205, 245, 127);
+  display: flex;
+  align-items: center;
+}
+
+.right-area {
+  width: 50%;
+  height: 80px;
+  background-color: rgb(205, 245, 127);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.btn-content {
+  display: flex;
+}
+
+.nav__btn {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  /* border: 1px solid; */
+  /* border-color: black; */
+  /* border-radius: 6px; 半径が6pxの角丸 */
+}
