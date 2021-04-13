@@ -1,2 +1,30 @@
 <%= render "top/header" %>
 
+<div class="main">
+
+  <div class="left-contents">
+  </div>
+
+
+  <div class="post-contents">
+
+    <div class="content-lists" >
+      <% @shares.each do |share| %>
+          <%= link_to shares_path(share.id) do %>
+            <div class='share-img-content'>
+              <%= image_tag share.image, class: "share-img" %>
+            </div>
+            <div class='share-info'>
+              <h3 class='share-title'>
+                <%= share.title %>
+              </h3>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+
+<%= render "top/footer" %>

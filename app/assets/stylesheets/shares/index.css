@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+}
+
+.left-contents {
+  background-color: lightseagreen;
+  width: 250px;
+}
+.post-contents{
+  width: calc(100vw - 250px);
+  background-color: powderblue;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.content-lists {
+  background-color: burlywood;
+  margin-left: 200px;
+  width: 65%;
+}
+
+.share-info {
+  background-color: pink;
+  color: black;
+  padding: 1vw;
+  display: flex;
+  justify-content: center;
+}
+
+.share-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.share-img-content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.share-img {
+  width: 70vh;
+  height: 60vh;
+}
