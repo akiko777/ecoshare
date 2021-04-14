@@ -2,47 +2,42 @@ a {
   text-decoration: none;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .main {
+  height: 100%;
   display: flex;
 }
 
-.left-contents {
-  background-color: lightseagreen;
-  width: 250px;
-}
-.post-contents{
-  width: calc(100vw - 250px);
-  background-color: powderblue;
-  /* display: flex; */
-  /* flex-direction: column; */
-}
-
-.content-lists {
-  background-color: burlywood;
-  margin-left: 200px;
+.card-area {
+  background-color: thistle;
   width: 65%;
 }
 
-.share-info {
-  background-color: pink;
-  color: black;
-  padding: 1vw;
-  display: flex;
-  justify-content: center;
-}
-
-.share-title {
-  font-weight: bold;
-  font-size: 20px;
+.card {
+  background-color: rgb(82, 174, 231);
+  height: 60px;
 }
 
 .share-img-content {
   display: flex;
   justify-content: center;
-  position: relative;
+  height: 200px;
 }
 
-.share-img {
-  width: 70vh;
-  height: 60vh;
+
+.share-info {
+  background-color: salmon;
+  height: 35px;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
 }
