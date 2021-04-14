@@ -1,16 +1,23 @@
-<main class="main">
-  <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-    <% if user_signed_in? %>
-      <div class="greeting"> 
-        <%= "こんにちは、" %>
-        <%# <%= link_to "#", "/users/#{current_user.id}", class: :greeting__link%>
+<%= render "top/header" %>
+
+<div class="main">
+
+    <div class="card-area">
+      <div class="card" >
+        <% @shares.each do |share| %>
+            <%= link_to shares_path(share.id) do %>
+              <div class='share-img-content'>
+                <%= image_tag share.image, class: "share-img" %>
+              </div>
+              <div class='share-info'>
+                <div class="title">
+                  <%= share.title %>
+                </div>
+              </div>
+            <% end %>
+        <% end %>
       </div>
-    <% end %>
-    <%# // ログインしているときは上記を表示する %>
-    <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-      <%# <%= render partial: 'prototype', collection: @prototypes %>
     </div>
-  </div>
-</main>
+
+
+</div>

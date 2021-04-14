@@ -1,0 +1,13 @@
+.second-header {
+  width: 100vw;
+  height: 130px;
+  background-color: rgb(205, 245, 127);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 35px;
+  margin-top: 10px;
+}

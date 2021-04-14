@@ -2,6 +2,7 @@ class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
+    @shares = Share.all
   end
 
   def new
