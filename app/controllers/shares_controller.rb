@@ -18,6 +18,21 @@ class SharesController < ApplicationController
     end
   end
 
+  def edit
+    @share = Share.find(params[:id])
+    unless current_user == @share.user
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    if @share.update(share_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
 
   private
 
