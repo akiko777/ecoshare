@@ -33,6 +33,9 @@ class SharesController < ApplicationController
     end
   end
 
+  def show
+    @share = Share.find(params[:id])
+  end
 
   private
 
