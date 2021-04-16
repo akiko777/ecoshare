@@ -1,0 +1,24 @@
+<%= render "top/second-header" %>
+
+<%# 投稿内容 %>
+  <div class="share-show">
+    <div class="share-card">
+      <div class="share-img-content">
+        <%= image_tag @share.image, class:"share-box-img" %>
+      </div>
+      <h2 class="title">
+        <%= @share.title %>
+      </h2>
+      <div class="share-text">
+        <%= @share.share %>
+      </div>
+
+      <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <% if user_signed_in? && current_user.id == @share.user_id %>
+          <%= link_to '編集する', edit_share_path(@share.id), method: :get, class: "share-green-btn" %>
+          <%= link_to '削除する', "#", method: :delete, class: "share-destroy" %>
+        <% end %>
+      <%# // 投稿者とログインしているユーザーが同じであれば上記を表示する %>
+    </div>
+  </div>
+<%#/ 投稿内容%>

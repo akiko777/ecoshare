@@ -7,7 +7,7 @@
 
           <% @shares.each do |share| %>
             <li class="card" >
-              <%= link_to shares_path(share.id) do %>
+              <%= link_to share_path(share.id) do %>
                 <div class='share-img-content'>
                   <%= image_tag share.image, class: "share-img" %>
                </div>
