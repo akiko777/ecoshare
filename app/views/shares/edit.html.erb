@@ -1,0 +1,43 @@
+<%= render "top/second-header" %>
+
+<div class="share-eco-contents">
+  <h2 class="share-eco-title">投稿内容を入力</h2>
+  <%= form_with model: @share, local: true do |f| %>
+
+  <%# 投稿画像 %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      投稿画像
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>画像を選択</p>
+      <%= f.file_field :image, id:"eco-image" %>
+    </div>
+  </div>
+  <%# /投稿画像 %>
+  <%# タイトル %>
+  <div class="share-title">
+    <div class="weight-bold-text">
+      タイトル
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"title-text", id:"share-title", placeholder:"タイトルを入力しよう（40文字まで）", maxlength:"40" %>
+  </div>
+  <%# /タイトル %>
+  <%# 投稿内容 %>
+  <div class="post-text">
+    <div class="weight-bold-text">
+      シェアしたい内容
+      <span class="indispensable">必須</span>
+    </div>
+      <%= f.text_area :share, class:"eco-text", id:"share-text", placeholder:"みんなにシェアしたいことを書こう（1,000文字まで）    例）いつもタンブラーを使ってます", rows:"7", maxlength:"1000" %>
+  </div>
+  <%# /投稿内容%>
+  <%# 投稿ボタン %>
+  <div class="post-btn-contents">
+    <%= f.submit "変更する", class:"post-btn" %>
+  </div>
+  <%# /投稿ボタン %>
+  <% end %>
+</div>

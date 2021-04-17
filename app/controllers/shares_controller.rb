@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit, :update]
 
   def index
     @shares = Share.all
@@ -26,6 +26,7 @@ class SharesController < ApplicationController
   end
 
   def update
+    @share = Share.find(params[:id])
     if @share.update(share_params)
       redirect_to root_path
     else
