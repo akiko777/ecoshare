@@ -38,6 +38,15 @@ class SharesController < ApplicationController
     @share = Share.find(params[:id])
   end
 
+  def destroy
+    @share = Share.find(params[:id])
+    if @share.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def share_params
