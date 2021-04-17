@@ -2,27 +2,43 @@ a {
   text-decoration: none;
 }
 
-html {
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  height: 100%;
-}
 
 .main {
   height: 100%;
   display: flex;
 }
 
-.card-area {
+/* .card-area {
   background-color: thistle;
   width: 65%;
+} */
+
+.card-lists {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-lists>.list {
+  width: 37vh;
+  /* padding: 1vw; */
+  background-color: #FFF;
 }
 
 .card {
   background-color: rgb(82, 174, 231);
-  height: 60px;
+  height: 210px;
+  width: 50%;
+  border: 2px solid black;
+  margin-bottom: 10px;
 }
 
 .share-img-content {
