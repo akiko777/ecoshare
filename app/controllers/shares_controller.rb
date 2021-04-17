@@ -1,5 +1,7 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update]
+  before_action :set_share, only: [:edit, :update, :show, :destroy]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
     @shares = Share.all
@@ -19,14 +21,9 @@ class SharesController < ApplicationController
   end
 
   def edit
-    @share = Share.find(params[:id])
-    unless current_user == @share.user
-      redirect_to action: :index
-    end
   end
 
   def update
-    @share = Share.find(params[:id])
     if @share.update(share_params)
       redirect_to root_path
     else
@@ -35,11 +32,9 @@ class SharesController < ApplicationController
   end
 
   def show
-    @share = Share.find(params[:id])
   end
 
   def destroy
-    @share = Share.find(params[:id])
     if @share.destroy
       redirect_to root_path
     else
@@ -51,6 +46,16 @@ class SharesController < ApplicationController
 
   def share_params
     params.require(:share).permit(:title, :share, :image).merge(user_id: current_user.id)
+  end
+
+  def set_share
+    @share = Share.find(params[:id])
+  end
+
+  def contributor_confirmation
+    unless current_user == @share.user
+      redirect_to action: :index
+    end
   end
 
 end
