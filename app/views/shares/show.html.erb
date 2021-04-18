@@ -35,6 +35,7 @@
       <% @share.comments.reverse_each do |comment| %>
         <li class="comments_list">
           <%= comment.text %>
+           <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
         </li>
       <% end %>
     </ul>
