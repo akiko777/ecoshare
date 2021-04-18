@@ -17,5 +17,6 @@ class User < ApplicationRecord
    end
 
    has_many :shares, dependent: :destroy
-  
+   has_many :comments, dependent: :destroy
+
 end
