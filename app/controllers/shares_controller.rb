@@ -36,7 +36,7 @@ class SharesController < ApplicationController
 
   def destroy
     if @share.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: "削除しました"
     else
       render :show
     end
