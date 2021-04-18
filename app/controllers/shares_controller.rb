@@ -32,6 +32,8 @@ class SharesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @share.comments.includes(:user)
   end
 
   def destroy
