@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.server.broadcast 'comment_channel', content: @comment.share
+      redirect_to share_path(@comment.share)
+    else
+      @share = @comment.share
+      @comments = @share.comments
+      render "shares/show"
     end
   end
 
