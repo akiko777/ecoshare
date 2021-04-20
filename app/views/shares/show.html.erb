@@ -23,6 +23,7 @@
   </div>
 <%#/ 投稿内容%>
 <%# コメント欄 %>
+<%= render "layouts/flash" %>
 <div class="comment-box">
   <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
   <% if user_signed_in? %>
@@ -35,7 +36,7 @@
       <% @share.comments.reverse_each do |comment| %>
         <li class="comments_list">
           <%= comment.text %>
-           <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
+          <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
         </li>
       <% end %>
     </ul>
