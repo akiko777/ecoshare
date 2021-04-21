@@ -12,6 +12,9 @@
       <div class="share-text">
         <%= @share.share %>
       </div>
+      <div class="share-user">
+        <%= link_to "#{@share.user.nickname}", user_path(@share.user_id), class: :share_user %>
+      </div>
 
       <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <% if user_signed_in? && current_user.id == @share.user_id %>

@@ -5,9 +5,7 @@
     <p class="card-title">
       <%= share.title %>
     </p>
-    <%# シェアしたい内容を表示 %>
-    <p class="card-share">
-      <%= share.share %>
-    </p>
+    <%# 投稿したユーザー名を表示 %>
+    <%= link_to "#{share.user.nickname}", user_path(share.user.id), method: :get, class: :card_user %>
   </div>
 </div>
