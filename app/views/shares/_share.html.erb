@@ -1,0 +1,13 @@
+<div class="card">
+  <%= link_to image_tag(share.image, class: :card_image ), share_path(share.id), method: :get %>
+  <div class="card-body">
+    <%# タイトルを表示 %>
+    <p class="card-title">
+      <%= share.title %>
+    </p>
+    <%# シェアしたい内容を表示 %>
+    <p class="card-share">
+      <%= share.share %>
+    </p>
+  </div>
+</div>
