@@ -22,3 +22,26 @@
     </div>
   </div>
 <%#/ 投稿内容%>
+<%# コメント欄 %>
+<%= render "layouts/flash" %>
+<div class="comment-box">
+  <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@share, @comment], local: true) do |f| %>
+      <%= f.text_field :text %>
+      <%= f.submit 'コメントする' %>
+    <% end %>
+    <%# コメントを一覧表示する %>
+    <ul class="comment-lists">
+      <% @share.comments.reverse_each do |comment| %>
+        <li class="comments_list">
+          <%= comment.text %>
+          <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
+        </li>
+      <% end %>
+    </ul>
+    <%# // コメントを一覧表示する %>
+  <% end %>
+  <%# // ログインしているユーザーには上記のコメント投稿フォームを表示する %>
+</div>
+<%# // コメント欄 %>
