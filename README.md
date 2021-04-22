@@ -60,6 +60,7 @@
 
 - has_many :shares
 - has_many :comments
+- has_many :likes
 
 
 ## sharesテーブル
@@ -74,6 +75,7 @@
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
 
 ## commentsテーブル
@@ -83,6 +85,19 @@
 | text     | text        | null:false                      |
 | user     | references  | null:false, foreign_key: true   |
 | share    | references  | null:false, foreign_key: true   |
+
+### Association
+
+- belongs_to :user
+- belongs_to :share
+
+
+## likesテーブル
+
+| Column   | Type        | Options                          |
+| -------- | ----------- | -------------------------------- |
+| user     | references  | null:false, foreign_key: true    |
+| share    | references  | null:false, foreign_key: true    |
 
 ### Association
 
