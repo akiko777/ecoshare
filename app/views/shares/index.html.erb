@@ -3,19 +3,16 @@
 <div class="main">
 <%= render "layouts/flash" %>
 
-    <%# <div class="card-area"> %>
-      <ul class='card-lists'>
-          <% @shares.each do |share| %>
-            <li class="card" >
-              <%= link_to share_path(share.id) do %>
-                <div class='share-img-content'>
-                  <%= render partial: 'share', collection: @shares %>
-                </div>
-              <% end %>
-            </li>
-          <% end %>
-      </ul>
-    <%# </div> %>
-
+    <ul class='card-lists'>
+        <% @shares.each do |share| %>
+          <li class="card" >
+            <%= link_to share_path(share.id) do %>
+              <div class='share-img-content'>
+                <%= render partial: 'share', collection: @shares %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+    </ul>
 
 </div>
