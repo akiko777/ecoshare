@@ -15,7 +15,7 @@ class SharesController < ApplicationController
     @share = Share.new(share_params)
     @share.user_id = current_user.id
     if @share.save
-       redirect_to root_path(@share)
+      redirect_to root_path(@share)
     else
       render :new
     end
@@ -35,7 +35,6 @@ class SharesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @share.comments.includes(:user)
-    # @like = Like.new
   end
 
   def destroy

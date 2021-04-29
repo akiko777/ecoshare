@@ -21,8 +21,8 @@ class User < ApplicationRecord
    has_many :likes, dependent: :destroy
    has_many :liked_shares, through: :likes, source: :share
 
-  def already_liked?(share)
-    self.likes.exists?(share_id: share.id)
-  end
+   def already_liked?(share)
+     self.likes.exists?(share_id: share.id)
+   end
 
 end
