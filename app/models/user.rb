@@ -16,8 +16,12 @@ class User < ApplicationRecord
      validates :password_confirmation
    end
 
-   has_many :shares, through: :likes, dependent: :destroy
+   has_many :shares, dependent: :destroy
    has_many :comments, dependent: :destroy
    has_many :likes, dependent: :destroy
+
+  def already_liked?(share)
+    self.likes.exists?(share_id: share.id)
+  end
 
 end
