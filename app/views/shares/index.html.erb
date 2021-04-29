@@ -12,6 +12,15 @@
               </div>
             <% end %>
           </li>
+          <%# いいね表示 %>
+          <% if current_user.already_liked?(share) %>
+            <% like = Like.find_by(user_id: current_user.id, share_id: share.id) %>
+            <%= link_to 'いいねを外す', share_like_path(share,like),  method: :delete %>
+          <% else %>
+            <%= link_to 'いいね', share_likes_path(share), method: :post %>
+          <% end %>
+          <%# いいね件数 %>
+          <%= share.likes.count %>
         <% end %>
     </ul>
 

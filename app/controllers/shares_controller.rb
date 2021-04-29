@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update]
+  before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update, :show, :destroy]
   before_action :set_share, only: [:edit, :update, :show, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
@@ -13,6 +13,7 @@ class SharesController < ApplicationController
 
   def create
     @share = Share.new(share_params)
+    @share.user_id = current_user.id
     if @share.save
        redirect_to root_path(@share)
     else
@@ -34,6 +35,7 @@ class SharesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @share.comments.includes(:user)
+    # @like = Like.new
   end
 
   def destroy
