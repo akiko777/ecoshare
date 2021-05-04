@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_share, only: [:edit, :update, :show, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
@@ -13,8 +13,9 @@ class SharesController < ApplicationController
 
   def create
     @share = Share.new(share_params)
+    @share.user_id = current_user.id
     if @share.save
-       redirect_to root_path(@share)
+      redirect_to root_path(@share)
     else
       render :new
     end

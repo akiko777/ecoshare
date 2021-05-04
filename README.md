@@ -16,7 +16,9 @@
 
 5.投稿内容詳細画面ではコメントをすることも可能です。
 
-6.投稿者は自分の投稿内容を編集・削除することができます。
+6.投稿内容が良いと思ったら、「いいね」する事ができます。また、「いいねを取り消す」を取り消す事もできます。
+
+7.投稿者は自分の投稿内容を編集・削除することができます。
 
 # 製作背景（意図）
 「自分が行っているエコ活動を誰かに知ってもらいたい」、「他の人はどんなエコ活動を行っているのか知りたい」、こういった思いを持ったユーザー同士がアプリを利用することで、気軽に情報共有することができればと思いました。<br>
@@ -38,11 +40,16 @@
 ## コメント機能
 - 他ユーザーの投稿内容に対してコメントができる<br>
 
+## いいね機能
+- 他ユーザーの投稿内容に対して「いいね」する事ができる<br>
+- いいねを取り消す事ができる<br>
+
 # 実装予定の機能
 - ユーザー新規登録・ログイン機能<br>
 - 写真付きメッセージ投稿機能<br>
 - 投稿内容の編集・削除機能<br>
 - コメント投稿機能<br>
+- いいね機能<br>
 
 
 # テーブル設計
@@ -60,6 +67,7 @@
 
 - has_many :shares
 - has_many :comments
+- has_many :likes
 
 
 ## sharesテーブル
@@ -74,6 +82,7 @@
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
 
 ## commentsテーブル
@@ -83,6 +92,19 @@
 | text     | text        | null:false                      |
 | user     | references  | null:false, foreign_key: true   |
 | share    | references  | null:false, foreign_key: true   |
+
+### Association
+
+- belongs_to :user
+- belongs_to :share
+
+
+## likesテーブル
+
+| Column   | Type        | Options                          |
+| -------- | ----------- | -------------------------------- |
+| user     | references  | null:false, foreign_key: true    |
+| share    | references  | null:false, foreign_key: true    |
 
 ### Association
 
