@@ -13,8 +13,8 @@
       <% else %>
         <%= button_to 'いいね', share_likes_path(share) %>
       <% end %>
+      <p><%= share.likes.count %></p>
     <% end %>
-    <p><%= share.likes.count %></p>
     <%# 投稿したユーザー名を表示 %>
     <%= link_to "#{share.user.nickname}", user_path(share.user.id), method: :get, class: :card_user %>
   </div>

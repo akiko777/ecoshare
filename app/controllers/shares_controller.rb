@@ -1,5 +1,5 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:index,:new, :create, :edit, :update, :show, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_share, only: [:edit, :update, :show, :destroy]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 

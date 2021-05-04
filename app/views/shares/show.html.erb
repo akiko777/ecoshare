@@ -15,6 +15,7 @@
       <div class="share-user">
         <%= link_to "#{@share.user.nickname}", user_path(@share.user_id), class: :share_user %>
       </div>
+
       <% if current_user %>
         <% if current_user.already_liked?(@share) %>
           <%# 現在ログイン中のユーザーが対象の投稿に対して行ったいいねのインスタンスを取得 %>
@@ -23,8 +24,9 @@
         <% else %>
           <%= button_to 'いいね', share_likes_path(@share) %>
         <% end %>
+        <p><%= @share.likes.count %></p>
       <% end %>
-      <p><%= @share.likes.count %></p>
+
       <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <% if user_signed_in? && current_user.id == @share.user_id %>
           <%= link_to '編集する', edit_share_path(@share.id), method: :get, class: "share-green-btn" %>
