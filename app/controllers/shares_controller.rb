@@ -15,8 +15,9 @@ class SharesController < ApplicationController
     @share = Share.new(share_params)
     @share.user_id = current_user.id
     if @share.save
-      redirect_to root_path(@share)
+      redirect_to root_path(@share), notice: "投稿しました！"
     else
+      flash.now[:alert] = "投稿に失敗しました"
       render :new
     end
   end
@@ -26,8 +27,9 @@ class SharesController < ApplicationController
 
   def update
     if @share.update(share_params)
-      redirect_to root_path
+      redirect_to root_path, notice: "投稿内容を変更しました！"
     else
+      flash.now[:alert] = "投稿内容の変更に失敗しました"
       render :edit
     end
   end
