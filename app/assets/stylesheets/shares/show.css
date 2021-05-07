@@ -1,0 +1,101 @@
+.share-show {
+  text-align:center;
+}
+
+.error-message {
+  text-align: center;
+  background-color: rgb(245, 245, 89);
+  font-size: 18px;
+}
+
+.share-card {
+  width: 60%;
+  display: inline-block;
+  margin-top: 50px;
+  background-color: rgb(245, 255, 199);
+}
+
+.show-share-img-content {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+.share-box-img {
+  width: 450px;
+  height: 400px;
+  margin-top: 15px;
+  background-color: coral;
+}
+
+.show-share-title {
+  width: 50%;
+  font-size: 25px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 28px;
+  border-bottom: solid 3px rgb(94, 146, 15);
+}
+
+.show-share-text {
+  width: 80%;
+  margin-left : auto;
+  margin-right : auto;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.show-share-user {
+  font-size: 18px;
+  text-align: end;
+}
+
+.share_user {
+  color: black;
+  margin-right: 20px;
+}
+
+.like-content {
+  display: flex;
+}
+
+.like-btn {
+  background-color: gainsboro;
+  padding: 3px;
+  margin-left: 20px;
+}
+
+.count {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.show-btn {
+  margin: 30px;
+}
+
+.share-edit-btn {
+  background-color: rgb(193, 247, 85);
+  padding: 10px 30px 10px 30px;
+  margin-left: 20px;
+  color: black;
+}
+
+.share-destroy-btn {
+  background-color: rgb(193, 247, 85);
+  padding: 10px 30px 10px 30px;
+  margin-left: 20px;
+  color: black;
+}
+
+.comment-box {
+  width: 60%;
+  display: inline-block; 
+  margin-top: 15px;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
