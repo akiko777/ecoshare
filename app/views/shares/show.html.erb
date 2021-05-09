@@ -1,61 +1,71 @@
 <%= render "top/second-header" %>
 
-<%# 投稿内容 %>
-  <div class="share-show">
+<p class="error-message"><%= render "layouts/flash" %></p>
+
+<div class="share-show">
+    <%# 投稿内容 %>
     <div class="share-card">
-      <div class="share-img-content">
+      <div class="show-share-img-content">
         <%= image_tag @share.image, class:"share-box-img" %>
       </div>
-      <h2 class="title">
+      <p class="show-share-title">
         <%= @share.title %>
-      </h2>
-      <div class="share-text">
+      </p>
+      <p class="show-share-text">
         <%= @share.share %>
-      </div>
-      <div class="share-user">
-        <%= link_to "#{@share.user.nickname}", user_path(@share.user_id), class: :share_user %>
-      </div>
-
-      <% if current_user %>
-        <% if current_user.already_liked?(@share) %>
-          <%# 現在ログイン中のユーザーが対象の投稿に対して行ったいいねのインスタンスを取得 %>
-          <% like = Like.find_by(user_id: current_user.id, share_id: @share.id) %>
-          <%= button_to 'いいねを取り消す', share_like_path(@share, like.id), method: :delete %>
-        <% else %>
-          <%= button_to 'いいね', share_likes_path(@share) %>
+      </p>
+      <p class="show-share-user">
+        <%= link_to "from #{@share.user.nickname}", user_path(@share.user_id), class: :share_user %>
+      </p>
+      <div class="like-content">
+        <% if current_user %>
+          <% if current_user.already_liked?(@share) %>
+            <%# 現在ログイン中のユーザーが対象の投稿に対して行ったいいねのインスタンスを取得 %>
+            <% like = Like.find_by(user_id: current_user.id, share_id: @share.id) %>
+            <%= button_to 'いいねを取り消す', share_like_path(@share, like.id), method: :delete, class: "like-btn" %>
+          <% else %>
+            <%= button_to 'いいね', share_likes_path(@share), class: "like-btn" %>
+          <% end %>
+          <div class="count">
+            <p><%= @share.likes.count %></p>
+          </div>
         <% end %>
-        <p><%= @share.likes.count %></p>
-      <% end %>
+      </div>
+    </div>
 
       <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <div class="show-btn">
         <% if user_signed_in? && current_user.id == @share.user_id %>
-          <%= link_to '編集する', edit_share_path(@share.id), method: :get, class: "share-green-btn" %>
-          <%= link_to '削除する', share_path(@share.id), method: :delete, class: "share-destroy" %>
+          <%= link_to '編集する', edit_share_path(@share.id), method: :get, class: "share-edit-btn" %>
+          <%= link_to '削除する', share_path(@share.id), method: :delete, class: "share-destroy-btn" %>
         <% end %>
+      </div>
       <%# // 投稿者とログインしているユーザーが同じであれば上記を表示する %>
-    </div>
-  </div>
-<%#/ 投稿内容%>
-<%# コメント欄 %>
-<%= render "layouts/flash" %>
-<div class="comment-box">
-  <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-  <% if user_signed_in? %>
-    <%= form_with(model: [@share, @comment], local: true) do |f| %>
-      <%= f.text_field :text %>
-      <%= f.submit 'コメントする' %>
-    <% end %>
-    <%# コメントを一覧表示する %>
-    <ul class="comment-lists">
-      <% @share.comments.reverse_each do |comment| %>
-        <li class="comments_list">
-          <%= comment.text %>
-          <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
-        </li>
+
+  <%#/ 投稿内容%>
+
+
+
+  <%# コメント欄 %>
+  <div class="comment-box">
+    <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@share, @comment], local: true) do |f| %>
+        <%= f.text_field :text, class: "comment-form" %>
+        <%= f.submit 'コメントする' %>
       <% end %>
-    </ul>
-    <%# // コメントを一覧表示する %>
-  <% end %>
-  <%# // ログインしているユーザーには上記のコメント投稿フォームを表示する %>
+      <%# コメントを一覧表示する %>
+      <ul class="comment-lists">
+        <% @share.comments.reverse_each do |comment| %>
+          <li class="comments_list">
+            <%= comment.text %>
+            <%= link_to "(#{comment.user.nickname})", user_path(comment.user.id), class: :comment_user %>
+          </li>
+        <% end %>
+      </ul>
+      <%# // コメントを一覧表示する %>
+    <% end %>
+    <%# // ログインしているユーザーには上記のコメント投稿フォームを表示する %>
+  </div>
+  <%# // コメント欄 %>
 </div>
-<%# // コメント欄 %>

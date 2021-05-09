@@ -1,18 +1,35 @@
 <%= render "top/header" %>
 
-<div class="main">
-<%= render "layouts/flash" %>
+<div class="share-index">
 
-    <ul class='card-lists'>
-        <% @shares.each do |share| %>
-          <li class="card" >
-            <%= link_to share_path(share.id) do %>
-              <div class='share-img-content'>
-                <%= render partial: 'share', collection: @shares %>
+<p class="error-message"><%= render "layouts/flash" %></p>
+
+  <div class="container">
+    <div class="row">
+      <% @shares.each do |share| %>
+        <div class="col-md-4">
+          <div class="card" style="width: 300px;">
+            <%= link_to image_tag(share.image, class: "card-img-top",size: "300x300" ), share_path(share.id), method: :get %>
+              <div class="card-body">
+                <h5 class="card-title"><%= share.title %></h5>            
+                <p class="card-text"><%= link_to "#{share.user.nickname}", user_path(share.user.id), method: :get, class: :card_user %></p>
+                <div class="like-content">
+                  <% if current_user %>
+                    <% if current_user.already_liked?(share) %>
+                    <%# 現在ログイン中のユーザーが対象の投稿に対して行ったいいねのインスタンスを取得 %>
+                      <% like = Like.find_by(user_id: current_user.id, share_id: share.id) %>
+                      <%= button_to 'いいねを取り消す', share_like_path(share, like.id), method: :delete, class: "like-btn" %>
+                    <% else %>
+                      <%= button_to 'いいね', share_likes_path(share), class: "like-btn" %>
+                    <% end %>
+                      <div class="count"><%= share.likes.count %></div> 
+                  <% end %>
+                </div>
               </div>
-            <% end %>
-          </li>
-        <% end %>
-    </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 </div>
