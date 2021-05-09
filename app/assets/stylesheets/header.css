@@ -1,12 +1,13 @@
 .top-page-header {
   width: 100vw;
   height: 130px;
-  background-color: white;
+  background-color: rgb(8, 204, 8);
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
-.header-title {
+.top-header-title {
  font-size: 35px;
  margin-top: 10px;
  display: flex;
@@ -15,23 +16,23 @@
 
 .btn-area {
   width: 100vw;
-  height: 70px;
-  background-color: rgb(205, 245, 127);
+  height: 50px;
+  background-color: rgb(8, 204, 8);
   display: flex;
 }
 
 .left-area {
   width: 50%;
-  height: 70px;
-  background-color: rgb(205, 245, 127);
+  height: 50px;
+  background-color: rgb(8, 204, 8);
   display: flex;
   align-items: center;
 }
 
 .right-area {
   width: 50%;
-  height: 70px;
-  background-color: rgb(205, 245, 127);
+  height: 50px;
+  background-color: rgb(8, 204, 8);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -39,7 +40,7 @@
 
 .user-nickname {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 20px;
   padding: 10px;
   margin-left: 20px;
@@ -50,9 +51,9 @@
   display: flex;
 }
 
-.nav__btn {
+.top_btn {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 20px;
   font-weight: bold;
   padding: 10px;
