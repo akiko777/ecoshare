@@ -118,12 +118,13 @@
   margin-top: 30px;
 }
 
-.page-heading {
+.user-page-heading {
   margin-top: 50px;
   border-bottom: solid 3px rgb(94, 146, 15);
   width: 50%;
   text-align: center;
   display: inline-block;
+  font-weight: bold;
 }
 
 .user-profile {
