@@ -4,7 +4,7 @@ class SharesController < ApplicationController
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
-    @shares = Share.all
+    @shares = Share.includes(:user).order("created_at DESC")
   end
 
   def new
