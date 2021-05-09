@@ -1,3 +1,5 @@
+/* 投稿内容の詳細について */
+
 .share-show {
   text-align:center;
 }
@@ -99,3 +101,37 @@
 .comment-form {
   margin-top: 20px;
 }
+
+/* 投稿内容の詳細について */
+
+/* ユーザー登録内容の詳細について */
+
+.user-show {
+  text-align:center;
+}
+
+.user-card {
+  width: 60%;
+  height: 350px;
+  display: inline-block;
+  background-color: rgb(245, 255, 199);
+  margin-top: 30px;
+}
+
+.page-heading {
+  margin-top: 50px;
+  border-bottom: solid 3px rgb(94, 146, 15);
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+.user-profile {
+  width: 80%;
+  margin-left : auto;
+  margin-right : auto;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 15px;
+}
+/* ユーザー登録内容の詳細について */

@@ -8,11 +8,6 @@
     <div class="user-profile">
       <%= @user.profile %>
     </div>
-    <h2 class="page-heading">
-      <%= "#{@user.nickname}さんの投稿一覧" %>
-    </h2>
-    <div class="user-card">
-      <%= render partial: "shares/share", collection: @shares %>
-    </div>
   </div>
+
 </div>
