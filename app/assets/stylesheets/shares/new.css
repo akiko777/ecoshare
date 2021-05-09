@@ -1,33 +1,3 @@
-/* .header {
-  background-color: rgb(204, 235, 159);
-  margin: 0;
-  padding: 20px 0;
-  display: block;
-
-}
-
-.headline {
-  height: 50px;
-}
-
-
-h1 {
-  display: flex;
-} */
-
-/* .nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav__logout {
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  user-select: none;
-} */
-
 .nav__btn {
   display: inline-block;
   color: black;
