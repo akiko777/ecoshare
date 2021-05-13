@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: ecoshare_production
-  username: ecoshare
-  password: <%= ENV['ECOSHARE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql.sock
